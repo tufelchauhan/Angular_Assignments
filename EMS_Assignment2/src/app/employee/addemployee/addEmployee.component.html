@@ -1,0 +1,83 @@
+<div>
+    <form #registration_form="ngForm" (ngSubmit)="addEmployee()">
+      <div class="input-title">
+        <label for="firstname">First Name:</label>
+        <div><input type="text" id="firstname" name="firstname" [(ngModel)] = 'emp.firstName'/></div>
+      </div>
+      <div class="input-title">
+        <label for="lastname">Last Name:</label>
+        <div><input type="text" id="lastname"name="lastname" [(ngModel)] = 'emp.lastName'/></div>
+        
+      </div>
+      <div class="input-title">
+        <label for="email">Email:</label>
+        <div><input type="email" id="email" name="email" [(ngModel)] = 'emp.email'/></div>
+        
+      </div>
+      <div class="input-title">
+        <label for="contact">Contact Number:</label>
+        <div><input type="phone" id="contact" name="contact" [(ngModel)] = 'emp.contact'/></div>
+      </div>
+      <div class="input-title">
+        <label for="address">Address:</label>
+        <div><textarea id="address" name="address" [(ngModel)] = 'emp.address' ></textarea></div>
+      </div>
+      <div class="input-title">
+        <label for="username">Username:</label>
+        <div><input type="text" id="username" name="username" [(ngModel)] = 'emp.username'/></div>
+        
+      </div>
+      <div class="input-title">
+        <label for="pass">Password:</label>
+        <div><input type="password" id="pass" name="pass" [(ngModel)] = 'emp.password'/></div>
+        
+      </div>
+      <div class="input-title">
+        <label>Gender:</label>
+        <div>
+          <input type="radio" name="gender" id="male" value="male" [(ngModel)] = 'emp.gender' />
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" id="female" value="female" [(ngModel)] = 'emp.gender' />
+          <label for="female">Female</label>
+        </div>
+      </div>
+      <div id="qualification_dropdown" class="input-title">
+          <div>Qualification:</div>
+           <select id="qualification" name="qualification" [(ngModel)]='emp.qualification' >
+            <option *ngFor='let qualification of qualification_arr'>{{qualification}}</option>
+            <!-- <option value="12">12th</option>
+            <option value="bca">B.C.A</option>
+            <option value="msc(it)">M.sc(IT)</option>
+            <option value="phd">Ph.D.</option> -->
+          </select>
+        
+      </div>
+      <div id="experience_dropdown" class="input-title">
+          <div>Experience:</div>
+          <select id="experience" name="experience" [(ngModel)]='emp.experience'>
+            <option *ngFor='let experience of experience_arr'>{{experience}}</option>
+            <!-- <option value="6months">&gt;= 6 months</option>
+            <option value="1years">&gt;= 1 years</option>
+            <option value="2years">&gt;= 2 years</option>
+            <option value="5years">&gt;= 5 years</option>
+            <option value="10years">&gt;= 10 years</option> -->
+          </select>
+      </div>
+      <div id="container" class="input-title">
+        <div>Coding Languages:</div>
+            <div *ngFor='let language of languages_obj; let i = index'>
+            <label>
+            <input type="checkbox" [value]='language.name' [checked]='language.isEnabled' (click) = 'checkval(i)'/>{{language.name}}</label>
+            </div>
+            <!-- <label><input type="checkbox" id="java" name="languages" value="Java">Java</label><br>
+            <label><input type="checkbox" id="c#" name="languages" value="C#">C#</label><br>
+            <label><input type="checkbox" id="php" name="languages" value="PHP">PHP</label><br>
+            <label><input type="checkbox" id="python" name="languages" value="Python">Python</label> -->
+      </div>
+      <div class="input-title">
+        <div><button type="submit" value="Register">Register</button></div>
+      </div>
+    </form>
+  </div>
