@@ -1,0 +1,15 @@
+table thead tr th,table tbody tr td {
+    text-align: center;
+}
+
+.route{
+    display: flex;
+}
+.route a{
+     margin:0 auto;
+}
+
+.nodecoration tr td a{
+    text-decoration: none;
+    color:#333;
+}

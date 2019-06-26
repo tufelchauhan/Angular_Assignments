@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>CHANGE DATA FOR ATHLETE</h3>
+    <div class="form">
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+      <div class="form-group">
+        <label for="athletename">Name</label>
+        <select class="form-control" name="athletename" #AthleteName="ngModel" [(ngModel)]="service.formData.AthleteName" id="athletename">
+          <option>Queen Jacobi</option>
+          <option>Magen Faye</option>
+          <option>Delicia Ledonne</option>
+          <option>Camille Grantham</option>
+          <option>Marc Voth</option>
+          <option>Randy Rondon</option>
+          <option>Delora Saville</option>
+          <option>Rosario Reuben</option>
+          <option>Lula Uhlman</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="distance">Distance (meter)</label>
+        <input type="text" minlength="1" maxlength="6" #Distance="ngModel" [(ngModel)]="service.formData.Distance" class="form-control" name="distance" id="distance"/>
+      </div>
+      <div class="route1">
+          <input type="button" (click)="onDelete()" class="btn btn-info" value="DELETE ATHLETE FROM TEST">
+      </div>
+      <div class="route2">
+        <input type="submit" value="SAVE" class="btn btn-success"/>
+      </div>
+      </form>
+    </div>
+  </div>

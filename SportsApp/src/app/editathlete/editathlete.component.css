@@ -1,0 +1,20 @@
+.container{
+    text-align: center;
+}
+.form{
+    margin: 0 auto;
+    width:25%;
+}
+
+.form-group label{
+    font-weight:normal;
+}
+
+.route1{
+    justify-content: center;
+}
+
+.route2{
+    justify-content: center;
+    margin-top:15px;
+}
