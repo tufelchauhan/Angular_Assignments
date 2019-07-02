@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>{{TestType.toUpperCase()}}  D. {{TestDate}}</h3>
+    <div class="row">
+      <table class="table table-hover col-sm-6" align="center">
+        <thead>
+         <tr>
+            <th></th>
+            <th>Ranking</th>
+            <th>Distance (Meter)</th>
+            <th>Fitness Rating</th>
+          </tr>
+        </thead>
+        <tbody  class="nodecoration">
+          <tr *ngFor="let tr of service.list">
+            <td><a [routerLink]='["/editathlete",tr.TestResultId,TestId,TestDate,TestType]'>{{tr.TestResultId}}</a></td>
+            <td><a [routerLink]='["/editathlete",tr.TestResultId,TestId,TestDate,TestType]'>{{tr.AthleteName}}</a></td>
+            <td><a [routerLink]='["/editathlete",tr.TestResultId,TestId,TestDate,TestType]'>{{tr.Distance}}</a></td>
+            <td><a [routerLink]='["/editathlete",tr.TestResultId,TestId,TestDate,TestType]'>{{tr.Rating}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="route1">
+        <a class="btn btn-info" [routerLink]='["/addathlete",TestId,TestDate,TestType]'>ADD NEW ATHLETE TO TEST</a><br>
+    </div>
+    <div class="route2">
+        <a class="btn btn-danger" (click)="onDelete()">DELETE TEST</a>
+    </div>
+  </div>
+  
